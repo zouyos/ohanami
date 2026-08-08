@@ -108,7 +108,7 @@ function App() {
       ))}
       <div className={style.btns}>
         <FaArrowAltCircleLeft
-          color='coral'
+          color='salmon'
           size={40}
           className={style.btn}
           onClick={() => {
