@@ -117,7 +117,7 @@ function App() {
           }}
         />
         <FaArrowAltCircleRight
-          color={allNamesFilled ? 'chartreuse' : 'gray'}
+          color={allNamesFilled ? 'greenyellow' : 'gray'}
           size={40}
           className={allNamesFilled ? style.btn : style.disabled}
           onClick={() => {
