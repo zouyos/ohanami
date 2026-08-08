@@ -7,9 +7,10 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
+  width: 100svw;
+  height: 100svh;
   background: url('assets/images/background.png') no-repeat center / cover;
   z-index: -1;
-  height: 100svh;
 }
 
 input {
