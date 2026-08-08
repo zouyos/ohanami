@@ -142,7 +142,8 @@ function App() {
                   <label className={style.icon}>💧</label>
                   <input
                     type='number'
-                    min='0'
+                    min={0}
+                    max={30}
                     className={style.numberInput}
                     placeholder='0'
                     onChange={(e) => {
@@ -160,7 +161,8 @@ function App() {
                   <label className={style.icon}>💧</label>
                   <input
                     type='number'
-                    min='0'
+                    min={0}
+                    max={30}
                     className={style.numberInput}
                     placeholder='0'
                     onChange={(e) => {
@@ -173,7 +175,8 @@ function App() {
                   <label className={style.icon}>🌱</label>
                   <input
                     type='number'
-                    min='0'
+                    min={0}
+                    max={30}
                     className={style.numberInput}
                     placeholder='0'
                     onChange={(e) => {
@@ -191,7 +194,8 @@ function App() {
                   <label className={style.icon}>💧</label>
                   <input
                     type='number'
-                    min='0'
+                    min={0}
+                    max={30}
                     className={style.numberInput}
                     placeholder='0'
                     onChange={(e) => {
@@ -204,7 +208,8 @@ function App() {
                   <label className={style.icon}>🌱</label>
                   <input
                     type='number'
-                    min='0'
+                    min={0}
+                    max={30}
                     className={style.numberInput}
                     placeholder='0'
                     onChange={(e) => {
@@ -217,7 +222,8 @@ function App() {
                   <label className={style.icon}>🪨</label>
                   <input
                     type='number'
-                    min='0'
+                    min={0}
+                    max={30}
                     className={style.numberInput}
                     placeholder='0'
                     onChange={(e) => {
@@ -230,7 +236,8 @@ function App() {
                   <label className={style.icon}>🌸</label>
                   <input
                     type='number'
-                    min='0'
+                    min={0}
+                    max={30}
                     className={style.numberInput}
                     placeholder='0'
                     onChange={(e) => {

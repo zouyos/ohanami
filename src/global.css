@@ -13,6 +13,15 @@ body::before {
   z-index: -1;
 }
 
+@font-face {
+  font-family: 'Electroharmonix';
+  src:
+    local('Electroharmonix'),
+    url('./assets/fonts/Electroharmonix.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 input {
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.25);
