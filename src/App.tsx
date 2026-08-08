@@ -71,6 +71,7 @@ function App() {
             setNbPlayers(nb);
             setPlayers(
               Array.from({ length: nb }, () => ({
+                id: crypto.randomUUID(),
                 name: '',
                 scores: [0, 0, 0, 0, 0, 0, 0],
                 totalScore: 0,
@@ -94,7 +95,7 @@ function App() {
       <h2>Entrez les noms des joueurs</h2>
       {players.map((player, i) => (
         <input
-          key={i}
+          key={player.id}
           type='text'
           className={style.modernInput}
           placeholder={`Nom du joueur ${i + 1}`}
@@ -116,7 +117,7 @@ function App() {
           }}
         />
         <FaArrowAltCircleRight
-          color={allNamesFilled ? 'greenyellow' : 'gray'}
+          color={allNamesFilled ? 'chartreuse' : 'gray'}
           size={40}
           className={allNamesFilled ? style.btn : style.disabled}
           onClick={() => {
@@ -128,12 +129,28 @@ function App() {
     </div>
   );
 
+  function getMedal(player: Player) {
+    const uniqueScores = [
+      ...new Set(players.map((player) => player.totalScore)),
+    ].sort((a, b) => b - a);
+
+    const rank = uniqueScores.indexOf(player.totalScore) + 1;
+
+    if (rank === 1) return '🥇';
+    if (rank === 2) return '🥈';
+    if (rank === 3) return '🥉';
+
+    return '';
+  }
+
   const gameDiv = (
     <div className={style.gameDiv}>
       <h2 className='mb-4 fs-1'>Calcul des points</h2>
       {players.map((player, i) => (
-        <div key={i} className={style.playerCard}>
-          <h3 className={style.playerName}>{player.name}</h3>
+        <div key={player.id} className={style.playerCard}>
+          <h3 className={style.playerName}>
+            {player.name} {getMedal(player)}
+          </h3>
           <div className={style.seasons}>
             <div className={style.seasonWrapper}>
               <h5 className={style.seasonTitle}>Saison 1</h5>
