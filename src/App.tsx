@@ -83,6 +83,12 @@ function App() {
         totalScore: 0,
       })),
     );
+
+    document
+      .querySelectorAll<HTMLInputElement>("input[type='number']")
+      .forEach((input) => {
+        input.value = '';
+      });
   }
 
   function home() {
@@ -179,7 +185,7 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
-                    value={player.scores[0]}
+                    placeholder='0'
                     className={style.numberInput}
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
@@ -198,7 +204,7 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
-                    value={player.scores[1]}
+                    placeholder='0'
                     className={style.numberInput}
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
@@ -212,7 +218,7 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
-                    value={player.scores[2]}
+                    placeholder='0'
                     className={style.numberInput}
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
@@ -231,7 +237,7 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
-                    value={player.scores[3]}
+                    placeholder='0'
                     className={style.numberInput}
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
@@ -245,7 +251,7 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
-                    value={player.scores[4]}
+                    placeholder='0'
                     className={style.numberInput}
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
@@ -259,7 +265,7 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
-                    value={player.scores[5]}
+                    placeholder='0'
                     className={style.numberInput}
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
@@ -273,7 +279,7 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
-                    value={player.scores[6]}
+                    placeholder='0'
                     className={style.numberInput}
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
