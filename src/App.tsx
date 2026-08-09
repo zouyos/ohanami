@@ -1,5 +1,6 @@
 import style from './style.module.css';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
+import { IoArrowUndoCircle } from 'react-icons/io5';
 import { useState } from 'react';
 import type { Player } from './types/types';
 
@@ -57,6 +58,26 @@ function App() {
 
       return newPlayers;
     });
+  }
+
+  function getMedal(player: Player) {
+    const uniqueScores = [
+      ...new Set(players.map((player) => player.totalScore)),
+    ].sort((a, b) => b - a);
+
+    const rank = uniqueScores.indexOf(player.totalScore) + 1;
+
+    if (rank === 1) return '🥇';
+    if (rank === 2) return '🥈';
+    if (rank === 3) return '🥉';
+
+    return '';
+  }
+
+  function home() {
+    setShowGame(false);
+    setNbPlayers(undefined);
+    setPlayers([]);
   }
 
   const nbPlayersDiv = (
@@ -128,20 +149,6 @@ function App() {
       </div>
     </div>
   );
-
-  function getMedal(player: Player) {
-    const uniqueScores = [
-      ...new Set(players.map((player) => player.totalScore)),
-    ].sort((a, b) => b - a);
-
-    const rank = uniqueScores.indexOf(player.totalScore) + 1;
-
-    if (rank === 1) return '🥇';
-    if (rank === 2) return '🥈';
-    if (rank === 3) return '🥉';
-
-    return '';
-  }
 
   const gameDiv = (
     <div className={style.gameDiv}>
@@ -272,6 +279,14 @@ function App() {
           </div>
         </div>
       ))}
+      <IoArrowUndoCircle
+        color='gainsboro'
+        size={60}
+        className={`${style.btn} my-4`}
+        onClick={() => {
+          home();
+        }}
+      />
     </div>
   );
 
