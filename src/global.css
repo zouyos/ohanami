@@ -15,11 +15,10 @@ body::before {
 
 @font-face {
   font-family: 'Electroharmonix';
-  src:
-    local('Electroharmonix'),
-    url('./assets/fonts/Electroharmonix.otf') format('opentype');
+  src: url('/fonts/Electroharmonix.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 
 input {
