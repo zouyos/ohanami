@@ -10,9 +10,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100vh;
-  height: 100lvh;
   background: url('assets/images/background.png') no-repeat center / cover;
-  background-color: #81bdca;
   z-index: -1;
 }
 
