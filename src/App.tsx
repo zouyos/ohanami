@@ -282,7 +282,7 @@ function App() {
       <IoArrowUndoCircle
         color='white'
         size={60}
-        className={`${style.btn} mt-4 mb-3`}
+        className={`${style.btn} my-3`}
         onClick={() => {
           home();
         }}
