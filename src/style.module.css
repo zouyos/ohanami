@@ -177,6 +177,14 @@
   font-size: 1.8rem;
 }
 
+.endButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
 @media (max-width: 1024px) {
   .playerCard {
     width: min(100%, 500px);

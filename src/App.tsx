@@ -1,6 +1,7 @@
 import style from './style.module.css';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
-import { IoArrowUndoCircle } from 'react-icons/io5';
+import { TiHome } from 'react-icons/ti';
+import { FaArrowRotateRight } from 'react-icons/fa6';
 import { useState } from 'react';
 import type { Player } from './types/types';
 
@@ -72,6 +73,16 @@ function App() {
     if (rank === 3) return '🥉';
 
     return '';
+  }
+
+  function replay() {
+    setPlayers((currentPlayers) =>
+      currentPlayers.map((player) => ({
+        ...player,
+        scores: [0, 0, 0, 0, 0, 0, 0],
+        totalScore: 0,
+      })),
+    );
   }
 
   function home() {
@@ -168,8 +179,8 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
+                    value={player.scores[0]}
                     className={style.numberInput}
-                    placeholder='0'
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
                       updateScore(i, 0, nbCards, 3);
@@ -187,8 +198,8 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
+                    value={player.scores[1]}
                     className={style.numberInput}
-                    placeholder='0'
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
                       updateScore(i, 1, nbCards, 3);
@@ -201,8 +212,8 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
+                    value={player.scores[2]}
                     className={style.numberInput}
-                    placeholder='0'
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
                       updateScore(i, 2, nbCards, 4);
@@ -220,8 +231,8 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
+                    value={player.scores[3]}
                     className={style.numberInput}
-                    placeholder='0'
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
                       updateScore(i, 3, nbCards, 3);
@@ -234,8 +245,8 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
+                    value={player.scores[4]}
                     className={style.numberInput}
-                    placeholder='0'
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
                       updateScore(i, 4, nbCards, 4);
@@ -248,8 +259,8 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
+                    value={player.scores[5]}
                     className={style.numberInput}
-                    placeholder='0'
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
                       updateScore(i, 5, nbCards, 7);
@@ -262,8 +273,8 @@ function App() {
                     type='number'
                     min={0}
                     max={30}
+                    value={player.scores[6]}
                     className={style.numberInput}
-                    placeholder='0'
                     onChange={(e) => {
                       const nbCards = Number(e.target.value);
                       countSakuraCards(i, 6, nbCards);
@@ -279,14 +290,24 @@ function App() {
           </div>
         </div>
       ))}
-      <IoArrowUndoCircle
-        color='white'
-        size={60}
-        className={`${style.btn} my-3`}
-        onClick={() => {
-          home();
-        }}
-      />
+      <div className={style.endButtons}>
+        <TiHome
+          color='white'
+          size={60}
+          className={style.btn}
+          onClick={() => {
+            home();
+          }}
+        />
+        <FaArrowRotateRight
+          color='salmon'
+          size={50}
+          className={style.btn}
+          onClick={() => {
+            replay();
+          }}
+        />
+      </div>
     </div>
   );
 
@@ -301,5 +322,3 @@ function App() {
 }
 
 export default App;
-//TODO:
-// - add id to players to avoid same name issues
