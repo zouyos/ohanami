@@ -286,6 +286,10 @@ select option {
     justify-content: flex-start;
     width: 100%;
   }
+
+  .numberInput {
+    width: 75px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -307,5 +311,9 @@ select option {
 
   .inputsWrapper {
     gap: 0.35rem;
+  }
+
+  .numberInput {
+    width: 75px;
   }
 }

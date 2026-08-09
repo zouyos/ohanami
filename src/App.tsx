@@ -146,7 +146,7 @@ function App() {
       ))}
       <div className={style.btns}>
         <FaArrowAltCircleLeft
-          color='salmon'
+          color='white'
           size={40}
           className={style.btn}
           onClick={() => {
@@ -154,7 +154,7 @@ function App() {
           }}
         />
         <FaArrowAltCircleRight
-          color={allNamesFilled ? 'yellowgreen' : 'gray'}
+          color='white'
           size={40}
           className={allNamesFilled ? style.btn : style.disabled}
           onClick={() => {
@@ -305,7 +305,7 @@ function App() {
           }}
         />
         <FaArrowRotateRight
-          color='salmon'
+          color='white'
           size={50}
           className={style.btn}
           onClick={() => {
