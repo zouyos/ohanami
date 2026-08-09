@@ -1,8 +1,7 @@
 html,
-body,
-#root {
+body {
   margin: 0;
-  min-height: 100%;
+  padding: 0;
 }
 
 body::before {
@@ -10,9 +9,9 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('assets/images/background.png') center / cover no-repeat;
+  width: 100lvw;
+  height: 100lvh;
+  background: url('assets/images/background.png') no-repeat center / cover;
   z-index: -1;
 }
 
