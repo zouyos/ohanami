@@ -4,18 +4,6 @@ body {
   padding: 0;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  height: 100lvh;
-  background: url('assets/images/background.png') no-repeat center / cover;
-  z-index: -1;
-}
-
 @font-face {
   font-family: 'Electroharmonix';
   src: url('assets/fonts/Electroharmonix.otf') format('opentype');
