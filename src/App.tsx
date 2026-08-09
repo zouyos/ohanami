@@ -100,9 +100,8 @@ function App() {
   const nbPlayersDiv = (
     <div className={style.nbPlayersDiv}>
       <h2>Combien de joueurs ?</h2>
-      <div className='selectWrapper'>
+      <div className={style.selectWrapper}>
         <select
-          className={style.modernSelect}
           value={nbPlayers ?? ''}
           onChange={(e) => {
             const nb = Number(e.target.value);
