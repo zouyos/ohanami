@@ -9,7 +9,9 @@ function App() {
   const [nbPlayers, setNbPlayers] = useState<number | undefined>(undefined);
   const [players, setPlayers] = useState<Player[]>([]);
   const [showGame, setShowGame] = useState(false);
-  const allNamesFilled = players.every((player) => player.name.trim() !== '');
+  const namesOk = players.every(
+    (player) => player.name.trim() !== '' && player.name.length <= 15,
+  );
 
   function updateScore(
     playerIndex: number,
@@ -134,6 +136,7 @@ function App() {
         <input
           key={player.id}
           type='text'
+          maxLength={15}
           className={style.modernInput}
           placeholder={`Nom du joueur ${i + 1}`}
           value={player.name}
@@ -156,9 +159,9 @@ function App() {
         <FaArrowAltCircleRight
           color='white'
           size={40}
-          className={allNamesFilled ? style.btn : style.disabled}
+          className={namesOk ? style.btn : style.disabled}
           onClick={() => {
-            if (!allNamesFilled) return;
+            if (!namesOk) return;
             setShowGame(true);
           }}
         />
