@@ -8,6 +8,13 @@
   flex-direction: column;
 }
 
+.background {
+  position: absolute;
+  inset: 0;
+  background: url('/assets/images/background.png') center / cover no-repeat;
+  z-index: -1;
+}
+
 .title {
   font-size: 3rem;
   font-weight: bold;

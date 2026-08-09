@@ -318,9 +318,11 @@ function App() {
 
   return (
     <div className={style.app}>
-      <h1 className={style.title}>おはなみ</h1>
-      <div className={style.content}>
-        {showGame ? gameDiv : nbPlayers ? nameDiv : nbPlayersDiv}
+      <div className={style.background}>
+        <h1 className={style.title}>おはなみ</h1>
+        <div className={style.content}>
+          {showGame ? gameDiv : nbPlayers ? nameDiv : nbPlayersDiv}
+        </div>
       </div>
     </div>
   );
