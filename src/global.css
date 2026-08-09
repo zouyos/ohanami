@@ -15,7 +15,7 @@ body::before {
 
 @font-face {
   font-family: 'Electroharmonix';
-  src: url('/fonts/Electroharmonix.otf') format('opentype');
+  src: url('assets/fonts/Electroharmonix.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: block;
