@@ -6,7 +6,6 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  isolation: isolate;
 }
 .app::before {
   content: '';
