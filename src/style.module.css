@@ -6,6 +6,7 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  isolation: isolate;
 }
 .app::before {
   content: '';
@@ -15,10 +16,7 @@
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background-image: url('assets/images/background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('assets/images/background.png') no-repeat center / cover;
   pointer-events: none;
 }
 
