@@ -308,7 +308,7 @@ function App() {
           }}
         />
         <FaArrowRotateRight
-          color='white'
+          color='pink'
           size={50}
           className={style.btn}
           onClick={() => {
