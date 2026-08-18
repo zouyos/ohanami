@@ -64,11 +64,13 @@ function App() {
   }
 
   function getMedal(player: Player) {
-    const uniqueScores = [
+    const uniqueTotalScores = [
       ...new Set(players.map((player) => player.totalScore)),
     ].sort((a, b) => b - a);
 
-    const rank = uniqueScores.indexOf(player.totalScore) + 1;
+    if (uniqueTotalScores.reduce((a, b) => a + b) === 0) return '';
+
+    const rank = uniqueTotalScores.indexOf(player.totalScore) + 1;
 
     if (rank === 1) return '🥇';
     if (rank === 2) return '🥈';
